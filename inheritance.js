@@ -20,7 +20,6 @@
 		this.subject = subject;
 	}
 
-	/*******************Without Inheritance ***************************************/
 	console.log("********************* Results without inheritance *********************");
 	// create object of Student object
 	var student1 = new Student("Jack", "Math");
@@ -37,14 +36,12 @@
 	catch(exception){
 		console.log(exception);
 	}
-	/**********************************************************/
 
 	// Inherit Student from Person
 	Student.prototype = Object.create(Person.prototype);
 	// Assign constructor back to Student
 	Student.prototype.constructor = Student;
 
-	/********************* After Inheritance *************************************/
 	console.log("********************* Results after inheritance *********************");
 	// create object of Student object
 	var student1 = new Student("Jill", "Economics"); // My name is Jill and i am stydying Math
@@ -56,7 +53,6 @@
 	console.log(student1 instanceof Person); // true
 	// invoke walk method on student1
 	console.log(student1.walk(7));  // this should log Steps 7 times on the console
-	/**********************************************************/
 
 	// utility method for inheritance
 	Function.prototype.inheritFrom = function(baseObject){
@@ -84,6 +80,5 @@
 	console.log(doctor instanceof Person);  // true
 	// invoke walk method on doctor
 	console.log(doctor.walk(4)); // this should log Steps 4 times on the console
-	/**********************************************************/
 
 })();
